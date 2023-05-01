@@ -82,7 +82,9 @@ try {
     contact = new Contact("Radha", "Patil", "1462", "KoLhapur", "Maharashtra", "416022", "9359915712", "xyz@gmail.com");
     contactArray.push(contact);
     console.log(contactArray);
-    Delete();
+    //Edit();
+   // Delete();
+   GetCount();
     function Edit() {
         let EditingName = "Sanjana";
         for (let item of contactArray) {
@@ -102,6 +104,16 @@ try {
         }
         console.log("After Deleting Contact----->");
         console.log(contactArray);
+    }
+    function GetCount()
+    {
+        const tally = contactArray.reduce((total, next) => {
+
+            total[next] = (total[next] || 0) + 1 ;
+          
+            return total;
+          }, {});
+          console.log(tally);
     }
 
 }
