@@ -16,6 +16,7 @@ class Contact {
         let Name_Reg = RegExp('^[A-Z]{1}[a-z]{2,}');
         if (Name_Reg.test(firstname))
             this._firstname = firstname;
+        
         else throw 'Name is Invalid';
     }
     get lastname() { return this._lastname }
@@ -80,8 +81,11 @@ try {
     //console.log(contact.tostring());
     contactArray.push(contact);
     contact = new Contact("Radha", "Patil", "1462", "KoLhapur", "Maharashtra", "416022", "9359915712", "xyz@gmail.com");
+    let flag =IsCheckDuplicate(contactArray._firstname);
+    if(!flag)
     contactArray.push(contact);
     console.log(contactArray);
+    
     //Edit();
    // Delete();
    GetCount();
@@ -114,6 +118,12 @@ try {
             return total;
           }, {});
           console.log(tally);
+    }
+    function IsCheckDuplicate(name)
+    {
+        let flag = contactArray.some(x=>x._firstname == name);
+        return flag;
+        //console.log(flag);
     }
 
 }
