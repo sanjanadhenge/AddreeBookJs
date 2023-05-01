@@ -77,9 +77,14 @@ class Contact
   
  
 }
+let contactArray = new Array();
 try{
-    contact = new Contact("Sanjana","Dhenge","1461","KoLhapur","Maharashtra","416012","9359913789","abc@gmail.com");
-    console.log(contact.tostring());
+    contact = new Contact("Sanjana","Dhenge","1461","KoLhapur","Maharashtra","416012","9359923789","abc@gmail.com");
+    //console.log(contact.tostring());
+    contactArray.push(contact);
+    contact = new Contact("Radha","Patil","1462","KoLhapur","Maharashtra","416022","9359915712","xyz@gmail.com");
+    contactArray.push(contact);
+    console.log(contactArray);
 
 }
 catch
